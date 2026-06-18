@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blood & Organ Donation - Prototype</title>
+
+<!-- CSS File -->
+<link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Blood & Organ Donation — Prototype</h1>
+    <div class="small-muted">Frontend-only working model • Uses localStorage</div>
+  </div>
+  <div class="top-actions">
+    <button id="seedBtn" class="seed">Seed sample data</button>
+    <button id="clearBtn" class="btn ghost">Clear all data</button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- LEFT PANEL -->
+  <div>
+    <!-- REGISTER USER -->
+    <div class="card">
+      <div class="title-row">
+        <div>
+          <div class="section-title">Register User</div>
+          <div class="small-muted">Donor or Recipient</div>
+        </div>
+        <span id="userCount" class="badge">0 users</span>
+      </div>
+
+      <label>Name</label>
+      <input id="name" placeholder="Full name" />
+
+      <div class="dual">
+        <div>
+          <label>Age</label>
+          <input id="age" type="number" placeholder="Age" />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input id="phone" placeholder="Phone" />
+        </div>
+      </div>
+
+      <label>Role</label>
+      <div class="radio-row">
+        <label><input type="radio" name="role" value="donor" checked> Donor</label>
+        <label><input type="radio" name="role" value="recipient"> Recipient</label>
+      </div>
+
+      <div class="dual">
+        <div>
+          <label>Blood Group</label>
+          <select id="blood">
+            <option value="">Select</option>
+            <option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option>
+            <option>O+</option><option>O-</option>
+          </select>
+        </div>
+        <div>
+          <label>Organ (optional)</label>
+          <input id="organ" placeholder="Kidney, Liver etc" />
+        </div>
+      </div>
+
+      <label>City</label>
+      <input id="city" placeholder="City" />
+
+      <div class="controls">
+        <button id="registerBtn" class="btn">Register</button>
+        <button id="updateAvailability" class="btn ghost">Toggle Availability</button>
+      </div>
+
+      <div class="small-muted">Availability: <span id="availabilityLabel">available</span></div>
+    </div>
+
+    <!-- SEARCH DONORS -->
+    <div class="card">
+      <div class="section-title">Search Donors</div>
+      <div class="dual">
+        <select id="searchBlood">
+          <option value="">Any blood</option>
+          <option>A+</option><option>A-</option>
+          <option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option>
+          <option>O+</option><option>O-</option>
+        </select>
+        <input id="searchCity" placeholder="City" />
+      </div>
+      <button id="searchBtn" class="btn">Search</button>
+      <div id="searchResults" class="list"></div>
+    </div>
+
+    <!-- EMERGENCY -->
+    <div class="card">
+      <div class="section-title">Emergency Request</div>
+
+      <label>Required Blood Group</label>
+      <select id="emBlood">
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+        <option>O+</option><option>O-</option>
+      </select>
+
+      <label>City</label>
+      <input id="emCity" placeholder="City" />
+
+      <label>Notes</label>
+      <input id="emNotes" placeholder="Hospital name / urgency" />
+
+      <button id="emergencyBtn" class="btn danger">Send Emergency Alert</button>
+    </div>
+  </div>
+
+  <!-- MIDDLE -->
+  <div>
+    <div class="card">
+      <h2>Platform Live View</h2>
+      <div class="small-muted">Donors • Recipients • Requests</div>
+      <div class="dual">
+        <div>Donors: <strong id="donorCount">0</strong></div>
+        <div>Recipients: <strong id="recipientCount">0</strong></div>
+      </div>
+
+      <div class="dual">
+        <div>
+          <div class="section-title">All Donors</div>
+          <div id="donorList" class="list"></div>
+        </div>
+        <div>
+          <div class="section-title">All Recipients</div>
+          <div id="recipientList" class="list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Hospital Dashboard</div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Blood</th><th>City</th><th>Notes</th><th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="reqTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div>
+    <div class="card">
+      <div class="section-title">Donor Notifications</div>
+      <span id="notifTotal" class="notify-count">0</span>
+      <div id="notificationsArea"></div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Activity Log</div>
+      <div id="activityLog" class="log"></div>
+    </div>
+  </div>
+
+</div>
+
+<div id="toastWrap"></div>
+
+<!-- JS File -->
+<script src="script.js"></script>
+
+</body>
+</html>

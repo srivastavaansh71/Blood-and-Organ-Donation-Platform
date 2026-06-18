@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.small-muted {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn, button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn {
+  background: #0ea5e9;
+  color: black;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+.seed {
+  background: #1e293b;
+  border: 1px dashed #475569;
+  color: #94a3b8;
+}
+
+.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 350px 1fr 300px;
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+input, select {
+  width: 100%;
+  padding: 7px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+
+.dual {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.badge {
+  background: #334155;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item {
+  padding: 10px;
+  background: #0f172a;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notify-btn {
+  background: transparent;
+  color: #0ea5e9;
+  border: 1px solid #334155;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #334155;
+  font-size: 13px;
+}
+
+.notify-count {
+  background: #f59e0b;
+  color: black;
+  padding: 4px 6px;
+  border-radius: 50%;
+  float: right;
+}
+
+.log {
+  max-height: 250px;
+  overflow-y: auto;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+}
